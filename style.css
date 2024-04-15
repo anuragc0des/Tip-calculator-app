@@ -1,0 +1,253 @@
+:root {
+  --strong-cyan: hsl(172, 67%, 45%);
+  --very-dark-cyan: hsl(183, 100%, 15%);
+  --dark-grayish-cyan: hsl(186, 14%, 43%);
+  --grayish-cyan: hsl(184, 14%, 56%);
+  --light-grayish-cyan: hsl(185, 41%, 84%);
+  --very-light-grayish-cyan: hsl(189, 41%, 97%);
+  --white: hsl(0, 0%, 100%);
+  --font-size: 24px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Space Mono", monospace;
+}
+
+body {
+  width: 100%;
+  min-height: 130vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--light-grayish-cyan);
+  gap: 30px;
+}
+
+.logo {
+  margin-top: 30px;
+}
+
+main {
+  max-width: 450px;
+  background-color: var(--white);
+  padding: 20px;
+  border-radius: 20px 20px 0px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+main .top,
+.bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.top .bill,
+.select-tip,
+.peopleNumber {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+label {
+  color: var(--very-dark-cyan);
+  font-weight: 900;
+  font-size: 14px;
+}
+
+input {
+  height: 35px;
+  border: none;
+  outline: none;
+  background-color: var(--very-light-grayish-cyan);
+  border-radius: 4px;
+  text-align: end;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  font-size: 1.1rem;
+  color: var(--very-dark-cyan);
+  font-weight: 900;
+}
+
+input:hover {
+  border: 2px solid;
+  border-color: var(--strong-cyan);
+  cursor: pointer;
+}
+
+.bill input {
+  width: 100%;
+}
+
+.bill .input img {
+  position: absolute;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.select-tip .tip {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.tip div {
+  background-color: var(--very-dark-cyan);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 45px;
+  color: var(--white);
+  font-weight: 900;
+  font-size: 1.1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* .tip div:hover {
+  background-color: var(--strong-cyan);
+  cursor: pointer;
+} */
+
+.tip .active-tip {
+  background-color: var(--strong-cyan);
+  cursor: pointer;
+}
+
+.tip #tip-custom {
+  max-width: 157px;
+  background-color: transparent;
+}
+
+#tip-custom input {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+#tip-custom input::placeholder {
+  color: var(--very-dark-cyan);
+}
+
+.peopleNumber {
+  display: flex;
+  flex-direction: column;
+}
+
+.peopleNumber .peopleLabel {
+  display: flex;
+  justify-content: space-between;
+}
+
+.error {
+  /* display: none; */
+  color: red;
+}
+
+.hidden {
+  display: none;
+}
+
+.peopleNumber input {
+  width: 100%;
+}
+
+.peopleNumber .input img {
+  position: absolute;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+main .bottom {
+  background-color: var(--very-dark-cyan);
+  border-radius: 12px;
+  padding: 30px 20px;
+}
+
+.bottom .calc-tip {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.bottom .tip-amount,
+.total {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tip-amount,
+.total .text {
+  color: var(--white);
+}
+
+.text .person {
+  color: var(--grayish-cyan);
+  font-size: 13px;
+}
+
+.tip-amount .amount {
+  color: var(--strong-cyan);
+  font-size: 1.8rem;
+  font-weight: 900;
+}
+
+.total .amount {
+  color: var(--strong-cyan);
+  font-size: 1.8rem;
+  font-weight: 900;
+}
+
+.bottom .reset {
+  background-color: var(--strong-cyan);
+  color: var(--very-dark-cyan);
+  padding: 12px 20px;
+  text-align: center;
+  font-weight: 800;
+  letter-spacing: 1px;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.bottom .reset:hover {
+  background-color: var(--light-grayish-cyan);
+}
+
+@media (min-width: 768px) {
+  body {
+    min-height: 100vh;
+  }
+
+  main {
+    max-width: 650px;
+    padding: 24px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .select-tip .tip {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+  }
+
+  main .bottom {
+    width: 420px;
+  }
+
+  .bottom {
+    gap: 130px;
+  }
+}
